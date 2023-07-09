@@ -1,0 +1,21 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 1
+Job counts:
+	count	jobs
+	1	all
+	1	tRNAscan
+	2
+
+[Mon Jul 10 02:24:00 2023]
+rule tRNAscan:
+    input: resource/G_intestinalis.fasta
+    output: output/tRNA_scan_result.txt
+    jobid: 1
+
+bash scripts/tRNAscan.sh resource/G_intestinalis.fasta output/tRNA_scan_result.txt
+Error submitting jobscript (exit code 127):
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/bfk/busra/miuul/.snakemake/log/2023-07-10T022400.974679.snakemake.log
