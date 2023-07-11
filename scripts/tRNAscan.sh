@@ -1,2 +1,4 @@
 #!/bin/bash
-tRNAscan-SE -o $1 $2
+tRNAscan-SE $1 -o $2
+
+
