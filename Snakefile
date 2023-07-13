@@ -1,15 +1,16 @@
 rule all:
-   input: "output/tRNA_scan_result.txt"
+   input:
+        "output/tRNA_scan_result.txt"
 
 rule tRNAscan:
-   input: "resource/G_intestinalis.fasta"
+   input: "resource/Genome/G_intestinalis.fasta"
    output:"output/tRNA_scan_result.txt"
-   conda: "env/env.yaml"
+   conda:
+         "env/env.yaml"
    shell: """tRNAscan-SE {input} -o {output}"""
-
 rule tRNAscan_stats:
    input:
-        genome= "resource/G_intestinalis.fasta"
+        genome= "resource/Genome/G_intestinalis.fasta"
    output:
    	    tRNA = "output/G_intestinalis.tRNA",
    	    stats = "output/G_intestinalis.stats"
