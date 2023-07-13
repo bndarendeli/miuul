@@ -1,6 +1,10 @@
 rule all:
    input:
-        "output/tRNA_scan_result.txt"
+        "output/tRNA_scan_result.txt",
+        "output/G_intestinalis.tRNA",
+        "output/G_intestinalis.stats",
+        "output/tRNAscan/G_intestinalis.tRNA",
+        expand("output/tRNAscan/{sp}.tRNA", sp=["G_muris", "G_instestinalis"])
 
 rule tRNAscan:
    input: "resource/Genome/G_intestinalis.fasta"
@@ -20,3 +24,15 @@ rule tRNAscan_stats:
            "env/env.yaml"
    script:
            "scripts/tRNAscan_stats.py"
+rule tRNAscan_stats_wildcard:
+    input:
+            genome="resource/Genome/G_intestinalis.fasta"
+    output:
+            tRNA = "output/tRNAscan/G_intestinalis.tRNA",
+            stats = "output/tRNAscan/G_intestinali.stats"
+    params:
+        threads=2
+    conda:
+        "env/env.yaml"
+    script:
+        "scripts/tRNAscan_stats.py"
