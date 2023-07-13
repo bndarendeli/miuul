@@ -1,0 +1,15 @@
+Building DAG of jobs...
+Creating conda environment env/env.yaml...
+Downloading and installing remote packages.
+CreateCondaEnvironmentException:
+Could not create conda environment from /media/busranur/SSD/busra/miuul/env/env.yaml:
+Preparing transaction: ...working... done
+Verifying transaction: ...working... done
+Executing transaction: ...working... done
+ERROR conda.core.link:_execute(745): An error occurred while installing package 'conda-forge::perl-5.32.1-3_hd590300_perl5'.
+Rolling back transaction: ...working... done
+
+[Errno 22] Invalid argument: '/media/busranur/SSD/busra/miuul/.snakemake/conda/06cc3c433955d3a7555287b9211bf1e7/man/man3/App::Cpan.3'
+()
+
+

@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job               count    min threads    max threads
+--------------  -------  -------------  -------------
+all                   1              1              1
+tRNAscan_stats        1              1              1
+total                 2              1              1
+
+Select jobs to execute...
+
+[Fri Jul 14 00:30:25 2023]
+rule tRNAscan_stats:
+    input: resource/Genome/G_intestinalis.fasta
+    output: output/G_intestinalis.tRNA, output/G_intestinalis.stats
+    jobid: 2
+    resources: tmpdir=/tmp
+
+/usr/bin/python3 /media/busranur/SSD/busra/miuul/.snakemake/scripts/tmpytsgvc17.tRNAscan_stats.py
+[Fri Jul 14 00:31:00 2023]
+Finished job 2.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Fri Jul 14 00:31:00 2023]
+localrule all:
+    input: output/tRNA_scan_result.txt, output/G_intestinalis.tRNA, output/G_intestinalis.stats
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Fri Jul 14 00:31:00 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /media/busranur/SSD/busra/miuul/.snakemake/log/2023-07-14T003025.398746.snakemake.log
