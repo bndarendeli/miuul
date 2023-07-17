@@ -4,7 +4,7 @@ rule all:
         "output/G_intestinalis.tRNA",
         "output/G_intestinalis.stats",
         "output/tRNAscan/G_intestinalis.tRNA",
-        expand("output/tRNAscan/{sp}.tRNA", sp=["G_muris", "G_instestinalis"])
+        expand("output/tRNAscan/{sp}.tRNA", sp=["G_muris", "G_intestinalis"])
 
 rule tRNAscan:
    input: "resource/Genome/G_intestinalis.fasta"
