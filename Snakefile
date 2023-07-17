@@ -29,7 +29,7 @@ rule tRNAscan_stats_wildcard:
             genome="resource/Genome/G_intestinalis.fasta"
     output:
             tRNA = "output/tRNAscan/G_intestinalis.tRNA",
-            stats = "output/tRNAscan/G_intestinali.stats"
+            stats = "output/tRNAscan/G_intestinalis.stats"
     params:
         threads=2
     conda:
