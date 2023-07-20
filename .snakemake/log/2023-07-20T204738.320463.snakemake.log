@@ -1,0 +1,67 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Conda environments: ignored
+Job stats:
+job            count    min threads    max threads
+-----------  -------  -------------  -------------
+all                1              1              1
+blastn             2              1              1
+makeblastdb        1              1              1
+total              4              1              1
+
+Select jobs to execute...
+
+[Thu Jul 20 20:47:39 2023]
+rule makeblastdb:
+    input: resource/blastn/db/G_intestinalis.fasta
+    output: output/blastn/db/G_intestinalis.ndb, output/blastn/db/G_intestinalis.nhr, output/blastn/db/G_intestinalis.nin, output/blastn/db/G_intestinalis.not, output/blastn/db/G_intestinalis.nsq, output/blastn/db/G_intestinalis.ntf, output/blastn/db/G_intestinalis.nto
+    jobid: 6
+    wildcards: type=blastn, db=G_intestinalis
+    resources: tmpdir=/tmp
+
+makeblastdb -dbtype nucl -in resource/blastn/db/G_intestinalis.fasta -out output/blastn/db/G_intestinalis
+[Thu Jul 20 20:47:39 2023]
+Finished job 6.
+1 of 4 steps (25%) done
+Select jobs to execute...
+
+[Thu Jul 20 20:47:39 2023]
+rule blastn:
+    input: resource/blastn/query/G_muris.fasta, output/blastn/db/G_intestinalis.ndb
+    output: output/blastn/G_intestinalis/G_muris.blastn
+    jobid: 5
+    wildcards: type=blastn, db=G_intestinalis, query=G_muris
+    resources: tmpdir=/tmp
+
+/usr/bin/python3 /media/busranur/SSD/busra/miuul/.snakemake/scripts/tmplvig37bo.blastn.py
+[Thu Jul 20 20:47:42 2023]
+Finished job 5.
+2 of 4 steps (50%) done
+Select jobs to execute...
+
+[Thu Jul 20 20:47:42 2023]
+rule blastn:
+    input: resource/blastn/query/S_salmonicida.fasta, output/blastn/db/G_intestinalis.ndb
+    output: output/blastn/G_intestinalis/S_salmonicida.blastn
+    jobid: 7
+    wildcards: type=blastn, db=G_intestinalis, query=S_salmonicida
+    resources: tmpdir=/tmp
+
+/usr/bin/python3 /media/busranur/SSD/busra/miuul/.snakemake/scripts/tmp9vzeee31.blastn.py
+[Thu Jul 20 20:47:47 2023]
+Finished job 7.
+3 of 4 steps (75%) done
+Select jobs to execute...
+
+[Thu Jul 20 20:47:47 2023]
+localrule all:
+    input: output/tRNA_scan_result.txt, output/G_intestinalis.tRNA, output/G_intestinalis.stats, output/tRNAscan/G_intestinalis.tRNA, output/tRNAscan/G_muris.tRNA, output/tRNAscan/G_intestinalis.tRNA, output/blastn/G_intestinalis/G_muris.blastn, output/blastn/G_intestinalis/S_salmonicida.blastn
+    jobid: 0
+    resources: tmpdir=/tmp
+
+[Thu Jul 20 20:47:47 2023]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: /media/busranur/SSD/busra/miuul/.snakemake/log/2023-07-20T204738.320463.snakemake.log

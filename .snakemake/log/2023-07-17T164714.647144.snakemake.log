@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 27 of /media/busranur/SSD/busra/miuul/Snakefile:
+Missing input files for rule tRNAscan_stats_wildcard:
+resource/Genome/G_muris.fasta

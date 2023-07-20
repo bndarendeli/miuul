@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 58 of /media/busranur/SSD/busra/miuul/Snakefile:
+Missing input files for rule blastn:
+resource/blastn/query/G_muris.fasta

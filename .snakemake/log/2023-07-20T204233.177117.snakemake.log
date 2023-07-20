@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 40 of /media/busranur/SSD/busra/miuul/Snakefile:
+Missing input files for rule makeblastdb:
+resource/blastn/db/G_intestinalis.fasta

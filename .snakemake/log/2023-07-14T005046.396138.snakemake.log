@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 1 of /media/busranur/SSD/busra/miuul/Snakefile:
+Missing input files for rule all:
+output/tRNAscan/G_muris.tRNA
+output/tRNAscan/G_instestinalis.tRNA
