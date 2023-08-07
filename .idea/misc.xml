@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.10" project-jdk-type="Python SDK" />
+  <component name="Black">
+    <option name="enabledOnReformat" value="true" />
+    <option name="pathToExecutable" value="/usr/bin/black" />
+    <option name="sdkUUID" value="e0069700-bf00-4597-a219-1b9d3126ba73" />
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="planet_miuul" project-jdk-type="Python SDK" />
 </project>

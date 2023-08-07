@@ -5,7 +5,8 @@ rule all:
         "output/G_intestinalis.stats",
         "output/tRNAscan/G_intestinalis.tRNA",
         expand("output/tRNAscan/{sp}.tRNA", sp=["G_muris", "G_intestinalis"]),
-        expand("output/blastn/G_intestinalis/{sp}.blastn", sp=["G_muris", "S_salmonicida"])
+        expand("output/blastn/G_intestinalis/{sp}.blastn", sp=["G_muris", "S_salmonicida"]),
+        #expand("output/plot/tRNAscan/{sp}.svg", sp=["G_muris", "S_salmonicida", "G_intestinalis"])
 
 rule tRNAscan:
    input: "resource/Genome/G_intestinalis.fasta"
@@ -25,18 +26,19 @@ rule tRNAscan_stats:
            "env/env.yaml"
    script:
            "scripts/tRNAscan_stats.py"
-rule tRNAscan_stats_wildcard:
-    input:
-            genome="resource/Genome/{Genome}.fasta"
-    output:
-            tRNA = "output/tRNAscan/{Genome}.tRNA",
-            stats = "output/tRNAscan/{Genome}.stats"
-    params:
-        threads=2
-    conda:
-        "env/env.yaml"
-    script:
-        "scripts/tRNAscan_stats.py"
+#rule tRNAscan_stats_wildcard:
+#    input:
+#            genome="resource/Genome/{Genome}.fasta"
+#    output:
+#            tRNA = "output/tRNAscan/{Genome}.tRNA",
+#            stats = "output/tRNAscan/{Genome}.stats"
+#    params:
+#        threads=2
+#    conda:
+#        "env/env.yaml"
+#    script:
+#        "scripts/tRNAscan_stats.py"
+
 rule makeblastdb:
     input:
         "resource/{type}/db/{db}.fasta"
@@ -72,3 +74,4 @@ rule blastn:
         "env/env.yaml"
     script:
         "scripts/blastn.py"
+
